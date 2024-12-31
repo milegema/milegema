@@ -3,7 +3,7 @@ package com.bitwormhole.passwordgm.data.blocks;
 import com.bitwormhole.passwordgm.data.ids.BlockID;
 import com.bitwormhole.passwordgm.data.repositories.refs.RefName;
 import com.bitwormhole.passwordgm.encoding.blocks.BlockType;
-import com.bitwormhole.passwordgm.encoding.ptable.PropertyTable;
+import com.bitwormhole.passwordgm.data.properties.PropertyTable;
 
 public abstract class BlockBase {
 

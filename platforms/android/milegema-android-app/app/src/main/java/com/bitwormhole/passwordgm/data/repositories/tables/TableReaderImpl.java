@@ -6,8 +6,8 @@ import com.bitwormhole.passwordgm.data.access.DataAccessRequest;
 import com.bitwormhole.passwordgm.data.access.DataAccessStack;
 import com.bitwormhole.passwordgm.data.access.DataAccessStackFactory;
 import com.bitwormhole.passwordgm.encoding.blocks.BlockType;
-import com.bitwormhole.passwordgm.encoding.ptable.PropertyTable;
-import com.bitwormhole.passwordgm.encoding.ptable.PropertyTableLS;
+import com.bitwormhole.passwordgm.data.properties.PropertyTable;
+import com.bitwormhole.passwordgm.data.properties.PropertyTableLS;
 
 import java.io.IOException;
 import java.util.HashMap;

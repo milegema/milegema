@@ -1,11 +1,6 @@
 package com.bitwormhole.passwordgm.data.repositories;
 
-import com.bitwormhole.passwordgm.encoding.ptable.PropertyTable;
-import com.bitwormhole.passwordgm.encoding.ptable.PropertyTableLS;
-import com.bitwormhole.passwordgm.encoding.secretdatafile.SecretDataFile;
-import com.bitwormhole.passwordgm.encoding.secretkeyfile.SecretKeyFile;
-import com.bitwormhole.passwordgm.encoding.secretkeyfile.SecretKeyFileLS;
-import com.bitwormhole.passwordgm.errors.PGMErrorCode;
+import com.bitwormhole.passwordgm.data.properties.PropertyTable;
 import com.bitwormhole.passwordgm.errors.PGMException;
 
 import java.io.IOException;
@@ -16,7 +11,6 @@ import java.security.NoSuchAlgorithmException;
 import java.util.ArrayList;
 import java.util.List;
 
-import javax.crypto.KeyGenerator;
 import javax.crypto.SecretKey;
 
 final class RepositoryInitializer {

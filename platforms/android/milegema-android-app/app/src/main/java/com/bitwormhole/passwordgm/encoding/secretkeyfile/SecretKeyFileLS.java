@@ -7,11 +7,11 @@ import com.bitwormhole.passwordgm.data.access.DataAccessStack;
 import com.bitwormhole.passwordgm.data.access.DataAccessStackFactory;
 import com.bitwormhole.passwordgm.encoding.blocks.BlockType;
 import com.bitwormhole.passwordgm.encoding.blocks.PlainBlock;
-import com.bitwormhole.passwordgm.encoding.ptable.PropertyTable;
+import com.bitwormhole.passwordgm.data.properties.PropertyTable;
 import com.bitwormhole.passwordgm.errors.PGMErrorCode;
 import com.bitwormhole.passwordgm.errors.PGMException;
 import com.bitwormhole.passwordgm.utils.ByteSlice;
-import com.bitwormhole.passwordgm.utils.PropertyGetter;
+import com.bitwormhole.passwordgm.data.properties.PropertyGetter;
 
 import java.io.IOException;
 import java.nio.file.Path;

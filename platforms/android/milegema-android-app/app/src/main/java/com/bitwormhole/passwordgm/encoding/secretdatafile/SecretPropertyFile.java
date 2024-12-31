@@ -1,7 +1,7 @@
 package com.bitwormhole.passwordgm.encoding.secretdatafile;
 
-import com.bitwormhole.passwordgm.encoding.ptable.PropertyTable;
-import com.bitwormhole.passwordgm.encoding.ptable.PropertyTableLS;
+import com.bitwormhole.passwordgm.data.properties.PropertyTable;
+import com.bitwormhole.passwordgm.data.properties.PropertyTableLS;
 
 import java.io.IOException;
 

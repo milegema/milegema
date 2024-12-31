@@ -1,12 +1,12 @@
 package com.bitwormhole.passwordgm.encoding.blocks;
 
 import com.bitwormhole.passwordgm.data.ids.BlockID;
-import com.bitwormhole.passwordgm.encoding.ptable.PropertyTable;
+import com.bitwormhole.passwordgm.data.properties.PropertyTable;
 import com.bitwormhole.passwordgm.errors.PGMErrorCode;
 import com.bitwormhole.passwordgm.errors.PGMException;
 import com.bitwormhole.passwordgm.utils.ByteSlice;
 import com.bitwormhole.passwordgm.utils.HashUtils;
-import com.bitwormhole.passwordgm.utils.PropertyGetter;
+import com.bitwormhole.passwordgm.data.properties.PropertyGetter;
 
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;

@@ -2,7 +2,7 @@ package com.bitwormhole.passwordgm.data.repositories;
 
 import com.bitwormhole.passwordgm.data.access.DataAccessMode;
 import com.bitwormhole.passwordgm.encoding.blocks.BlockType;
-import com.bitwormhole.passwordgm.encoding.ptable.PropertyTable;
+import com.bitwormhole.passwordgm.data.properties.PropertyTable;
 import com.bitwormhole.passwordgm.encoding.secretdatafile.SecretPropertyFile;
 
 import java.io.IOException;

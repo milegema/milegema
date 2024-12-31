@@ -1,11 +1,7 @@
 package com.bitwormhole.passwordgm.data.blocks;
 
-import com.bitwormhole.passwordgm.data.ids.AppBlockID;
-import com.bitwormhole.passwordgm.data.ids.BlockID;
 import com.bitwormhole.passwordgm.data.ids.UserBlockID;
 import com.bitwormhole.passwordgm.data.repositories.Repository;
-import com.bitwormhole.passwordgm.encoding.blocks.BlockType;
-import com.bitwormhole.passwordgm.encoding.ptable.PropertyTable;
 
 public final class UserBlockLS {
 

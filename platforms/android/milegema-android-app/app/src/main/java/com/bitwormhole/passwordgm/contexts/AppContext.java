@@ -1,36 +1,33 @@
 package com.bitwormhole.passwordgm.contexts;
 
 import com.bitwormhole.passwordgm.components.ComponentManager;
-import com.bitwormhole.passwordgm.data.blocks.AccountBlock;
 import com.bitwormhole.passwordgm.data.blocks.AppBlock;
+import com.bitwormhole.passwordgm.data.properties.PropertyTable;
 import com.bitwormhole.passwordgm.network.web.WebClient;
 import com.bitwormhole.passwordgm.security.KeyPairManager;
-import com.bitwormhole.passwordgm.security.SecretKeyManager;
 import com.bitwormhole.passwordgm.utils.Attributes;
-
-import java.util.Properties;
 
 public class AppContext extends ContextBase {
 
     private ComponentManager components;
-    private Properties properties;
+    private PropertyTable properties;
     private Attributes attributes;
     private KeyPairManager keyPairManager;
     private AppBlock block;
     private WebClient webClient;
-
+    private String profile; // debug/release/...
 
     private boolean started;
     private boolean starting;
     private boolean stopped;
     private boolean stopping;
-    private boolean developerMode;
+    private boolean debugEnabled;
 
 
     public AppContext(RootContext _parent) {
         super(_parent, ContextScope.APP);
         this.attributes = new Attributes();
-        this.properties = new Properties();
+        this.properties = PropertyTable.Factory.create();
     }
 
     public AppBlock getBlock() {
@@ -90,12 +87,12 @@ public class AppContext extends ContextBase {
         this.stopping = stopping;
     }
 
-    public boolean isDeveloperMode() {
-        return developerMode;
+    public boolean isDebugEnabled() {
+        return debugEnabled;
     }
 
-    public void setDeveloperMode(boolean developerMode) {
-        this.developerMode = developerMode;
+    public void setDebugEnabled(boolean debugEnabled) {
+        this.debugEnabled = debugEnabled;
     }
 
     public Attributes getAttributes() {
@@ -107,12 +104,20 @@ public class AppContext extends ContextBase {
     }
 
 
-    public Properties getProperties() {
+    public PropertyTable getProperties() {
         return properties;
     }
 
-    public void setProperties(Properties properties) {
+    public void setProperties(PropertyTable properties) {
         this.properties = properties;
+    }
+
+    public String getProfile() {
+        return profile;
+    }
+
+    public void setProfile(String profile) {
+        this.profile = profile;
     }
 
     public WebClient getWebClient() {

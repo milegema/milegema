@@ -7,13 +7,10 @@ import androidx.test.ext.junit.runners.AndroidJUnit4;
 
 import com.bitwormhole.passwordgm.data.access.DataAccessBlock;
 import com.bitwormhole.passwordgm.data.access.DataAccessRequest;
-import com.bitwormhole.passwordgm.data.access.DataAccessStack;
-import com.bitwormhole.passwordgm.data.access.DataAccessStackFactory;
 import com.bitwormhole.passwordgm.encoding.blocks.BlockType;
-import com.bitwormhole.passwordgm.encoding.ptable.PropertyTable;
+import com.bitwormhole.passwordgm.data.properties.PropertyTable;
 import com.bitwormhole.passwordgm.encoding.secretkeyfile.SecretKeyFile;
 import com.bitwormhole.passwordgm.encoding.secretkeyfile.SecretKeyFileLS;
-import com.bitwormhole.passwordgm.errors.PGMException;
 import com.bitwormhole.passwordgm.security.CipherMode;
 import com.bitwormhole.passwordgm.security.Encryption;
 import com.bitwormhole.passwordgm.security.PaddingMode;
@@ -27,7 +24,6 @@ import org.junit.runner.RunWith;
 
 import java.io.IOException;
 import java.nio.file.Path;
-import java.nio.file.Paths;
 import java.security.KeyPair;
 import java.security.KeyPairGenerator;
 import java.security.NoSuchAlgorithmException;

@@ -2,9 +2,7 @@ package com.bitwormhole.passwordgm.contexts;
 
 import com.bitwormhole.passwordgm.data.blocks.RootBlock;
 import com.bitwormhole.passwordgm.data.properties.pdo.ConfigPDO;
-import com.bitwormhole.passwordgm.encoding.ptable.PropertyTable;
-import com.bitwormhole.passwordgm.security.KeyPairManager;
-import com.bitwormhole.passwordgm.security.SecretKeyManager;
+import com.bitwormhole.passwordgm.data.properties.PropertyTable;
 
 public class RootContext extends ContextBase {
 

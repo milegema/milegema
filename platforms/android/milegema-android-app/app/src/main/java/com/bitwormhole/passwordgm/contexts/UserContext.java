@@ -3,7 +3,8 @@ package com.bitwormhole.passwordgm.contexts;
 import com.bitwormhole.passwordgm.data.blocks.UserBlock;
 import com.bitwormhole.passwordgm.data.properties.pdo.ConfigPDO;
 import com.bitwormhole.passwordgm.data.properties.pio.UserPIO;
-import com.bitwormhole.passwordgm.encoding.ptable.PropertyTable;
+import com.bitwormhole.passwordgm.data.properties.PropertyTable;
+import com.bitwormhole.passwordgm.network.api.OnlineServiceContext;
 
 public class UserContext extends ContextBase {
 
@@ -11,7 +12,7 @@ public class UserContext extends ContextBase {
     private UserPIO user;
     private ConfigPDO config;
     private PropertyTable configProperties;
-
+    private OnlineServiceContext onlineServiceContext;
 
     public UserContext(AppContext _parent) {
         super(_parent, ContextScope.USER);
@@ -65,9 +66,18 @@ public class UserContext extends ContextBase {
         this.user = user;
     }
 
+    public OnlineServiceContext getOnlineServiceContext() {
+        return onlineServiceContext;
+    }
+
+    public void setOnlineServiceContext(OnlineServiceContext onlineServiceContext) {
+        this.onlineServiceContext = onlineServiceContext;
+    }
+
     public PropertyTable getConfigProperties() {
         return configProperties;
     }
+
 
     public void setConfigProperties(PropertyTable configProperties) {
         this.configProperties = configProperties;

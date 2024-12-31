@@ -12,8 +12,8 @@ import com.bitwormhole.passwordgm.data.repositories.tables.TableHolder;
 import com.bitwormhole.passwordgm.data.repositories.tables.TableManager;
 import com.bitwormhole.passwordgm.data.repositories.tables.TableName;
 import com.bitwormhole.passwordgm.data.repositories.tables.TableWriter;
-import com.bitwormhole.passwordgm.encoding.ptable.PropertyTable;
-import com.bitwormhole.passwordgm.encoding.ptable.PropertyTableLS;
+import com.bitwormhole.passwordgm.data.properties.PropertyTable;
+import com.bitwormhole.passwordgm.data.properties.PropertyTableLS;
 import com.bitwormhole.passwordgm.utils.Logs;
 
 import org.junit.Test;

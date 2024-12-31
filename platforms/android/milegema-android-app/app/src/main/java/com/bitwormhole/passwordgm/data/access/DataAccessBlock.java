@@ -4,7 +4,6 @@ import com.bitwormhole.passwordgm.encoding.blocks.BlockType;
 import com.bitwormhole.passwordgm.encoding.blocks.BlockTypeSet;
 import com.bitwormhole.passwordgm.encoding.blocks.CryptoBlock;
 import com.bitwormhole.passwordgm.encoding.blocks.PlainBlock;
-import com.bitwormhole.passwordgm.encoding.ptable.PropertyTable;
 import com.bitwormhole.passwordgm.utils.ByteSlice;
 
 public class DataAccessBlock {

@@ -12,30 +12,32 @@ import com.bitwormhole.passwordgm.data.blocks.AppBlock;
 import com.bitwormhole.passwordgm.data.blocks.AppBlockLS;
 import com.bitwormhole.passwordgm.data.ids.ObjectID;
 import com.bitwormhole.passwordgm.data.repositories.Repository;
-import com.bitwormhole.passwordgm.data.repositories.RepositoryConfig;
-import com.bitwormhole.passwordgm.data.repositories.objects.ObjectEntity;
 import com.bitwormhole.passwordgm.data.repositories.objects.ObjectHolder;
 import com.bitwormhole.passwordgm.data.repositories.refs.RefHolder;
 import com.bitwormhole.passwordgm.data.repositories.refs.RefName;
-import com.bitwormhole.passwordgm.encoding.ptable.PropertyTable;
-import com.bitwormhole.passwordgm.encoding.ptable.PropertyTableLS;
-import com.bitwormhole.passwordgm.utils.FileOptions;
-import com.bitwormhole.passwordgm.utils.FileUtils;
+import com.bitwormhole.passwordgm.network.web.WebClient;
 import com.bitwormhole.passwordgm.utils.Logs;
-import com.bitwormhole.passwordgm.utils.PropertyGetter;
 import com.bitwormhole.passwordgm.utils.Time;
 
 import java.io.IOException;
-import java.nio.file.Files;
-import java.nio.file.Path;
 import java.util.ArrayList;
 import java.util.List;
 
 public class AutoAppContextLoader implements ComLifecycle {
 
     private ContextHolder contextHolder;
+    private WebClient webClient;
 
     public AutoAppContextLoader() {
+    }
+
+
+    public WebClient getWebClient() {
+        return webClient;
+    }
+
+    public void setWebClient(WebClient webClient) {
+        this.webClient = webClient;
     }
 
     public ContextHolder getContextHolder() {
@@ -84,43 +86,16 @@ public class AutoAppContextLoader implements ComLifecycle {
 
         final ContextHolder ch = this.contextHolder;
         final List<PrivateLoaderFunc> steps = new ArrayList<>();
-        AppContext ac = null;
+        AppContext ac = ch.getApp();
 
         steps.add(this::loadAppContext);
         steps.add(this::loadAppBlock);
-        steps.add(this::loadDeveloperMode);
+        //     steps.add(this::loadDeveloperMode);
 
         for (PrivateLoaderFunc fn : steps) {
             ac = fn.invoke(ac);
         }
         ch.setApp(ac);
-    }
-
-    private AppContext loadDeveloperMode(AppContext ac) throws IOException {
-
-        final String p_name = "mode.developer";
-        Repository repo = ac.getRepository();
-        Path config_file = repo.config().file();
-        Path dev_mode_file = config_file.getParent().resolve("developer");
-
-        if (Files.exists(dev_mode_file)) {
-            // load
-            String text = FileUtils.readText(dev_mode_file);
-            PropertyTable pt = PropertyTableLS.parse(text);
-            PropertyGetter getter = new PropertyGetter(pt);
-            ac.setDeveloperMode(getter.getBoolean(p_name, false));
-        } else {
-            // init new
-            FileOptions flags = new FileOptions();
-            flags.create = true;
-            flags.write = true;
-            flags.truncate = true;
-            PropertyTable pt = PropertyTable.Factory.create();
-            pt.put(p_name, String.valueOf(false));
-            String text = PropertyTableLS.stringify(pt);
-            FileUtils.writeText(text, dev_mode_file, flags);
-        }
-        return ac;
     }
 
 
@@ -144,6 +119,7 @@ public class AutoAppContextLoader implements ComLifecycle {
         ac.setLabel("password-gm-app");
         ac.setAlias(android_app_ctx.getClass().getSimpleName());
         ac.setDescription("" + ac);
+        ac.setWebClient(this.webClient);
 
         return ac;
     }

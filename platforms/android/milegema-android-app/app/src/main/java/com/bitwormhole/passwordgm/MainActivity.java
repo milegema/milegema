@@ -97,7 +97,7 @@ public class MainActivity extends PgmActivity {
         if (app == null) {
             return false;
         }
-        return app.isDeveloperMode();
+        return app.isDebugEnabled();
     }
 
     private boolean isUserContextReady(ContextHolder ch) {

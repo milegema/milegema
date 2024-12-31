@@ -6,8 +6,8 @@ import androidx.test.core.app.ApplicationProvider;
 import androidx.test.ext.junit.runners.AndroidJUnit4;
 
 import com.bitwormhole.passwordgm.encoding.blocks.BlockType;
-import com.bitwormhole.passwordgm.encoding.ptable.PropertyTable;
-import com.bitwormhole.passwordgm.encoding.ptable.PropertyTableLS;
+import com.bitwormhole.passwordgm.data.properties.PropertyTable;
+import com.bitwormhole.passwordgm.data.properties.PropertyTableLS;
 import com.bitwormhole.passwordgm.encoding.secretdatafile.SecretBinaryFile;
 import com.bitwormhole.passwordgm.encoding.secretdatafile.SecretPropertyFile;
 import com.bitwormhole.passwordgm.encoding.secretdatafile.SecretTextFile;

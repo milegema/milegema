@@ -1,6 +1,9 @@
 package com.bitwormhole.passwordgm.network.web;
 
 import com.bitwormhole.passwordgm.network.web.filters.CoreWebFilter;
+import com.bitwormhole.passwordgm.network.web.filters.JWTHandlerFilter;
+import com.bitwormhole.passwordgm.network.web.filters.LocationHandlerFilter;
+import com.bitwormhole.passwordgm.network.web.filters.LogFilter;
 
 import java.io.IOException;
 
@@ -35,6 +38,9 @@ public class DefaultWebClientFactory implements WebClientFactory {
     private static WebFilterRegistration[] default_wfr_array() {
         WebFilterList list = new WebFilterList();
 
+        list.add(new LogFilter(), 0);
+        list.add(new LocationHandlerFilter(), 0);
+        list.add(new JWTHandlerFilter(), 0);
         list.add(new CoreWebFilter(), 0);
 
         return list.toArray();
@@ -63,6 +69,9 @@ public class DefaultWebClientFactory implements WebClientFactory {
         if (config == null) {
             config = default_web_config();
         }
+        if (config.getFilters() == null) {
+            config.setFilters(default_wfr_array());
+        }
         WebContext context = new WebContext();
         context.setConfiguration(config);
         context.setClient(new ClientImpl(context));
@@ -70,5 +79,9 @@ public class DefaultWebClientFactory implements WebClientFactory {
         context.setBaseURL("/");
         context.setChain(this.makeChain(config));
         return context.getClient();
+    }
+
+    public static WebClientFactory getInstance() {
+        return new DefaultWebClientFactory();
     }
 }

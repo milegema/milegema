@@ -1,4 +1,4 @@
-package com.bitwormhole.passwordgm.encoding.ptable;
+package com.bitwormhole.passwordgm.data.properties;
 
 import java.util.Arrays;
 import java.util.Collections;

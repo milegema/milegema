@@ -2,11 +2,9 @@ package com.bitwormhole.passwordgm.data.properties.pdo;
 
 
 import com.bitwormhole.passwordgm.data.properties.Names;
-import com.bitwormhole.passwordgm.data.properties.pio.UserPIO;
-import com.bitwormhole.passwordgm.data.repositories.refs.RefName;
-import com.bitwormhole.passwordgm.encoding.ptable.PropertyTable;
-import com.bitwormhole.passwordgm.utils.PropertyGetter;
-import com.bitwormhole.passwordgm.utils.PropertySetter;
+import com.bitwormhole.passwordgm.data.properties.PropertyTable;
+import com.bitwormhole.passwordgm.data.properties.PropertyGetter;
+import com.bitwormhole.passwordgm.data.properties.PropertySetter;
 
 import java.io.IOException;
 

@@ -21,7 +21,7 @@ import com.bitwormhole.passwordgm.utils.Time;
 public class VerificationCodeBox extends LinearLayout {
 
     private MyRetryController mController;
-    private Runnable sender;
+    private OnClickSendListener onClickSendListener;
 
     public VerificationCodeBox(Context context) {
         super(context);
@@ -43,6 +43,9 @@ public class VerificationCodeBox extends LinearLayout {
         this.init_layout(context);
     }
 
+    public interface OnClickSendListener {
+        void onClickSend();
+    }
 
     private void init_layout(Context ctx) {
         View v = LayoutInflater.from(ctx).inflate(R.layout.element_verification_code_box, this);
@@ -106,21 +109,14 @@ public class VerificationCodeBox extends LinearLayout {
 
     private void handleClickSendCode(View v) {
         final Activity activity = (Activity) v.getContext();
-        final VerificationCodeBox self = this;
-        this.mController.button.setEnabled(false);
-        Promise.init(activity, MyRetryController.class).Try(() -> {
-            Result<MyRetryController> res = new Result<>();
-            run(self.sender);
-            res.setValue(null);
-            return res;
-        }).Then((res) -> {
-            startRetryTimer();
-            return res;
-        }).Catch((res) -> {
-            Errors.handle(activity, res.getError());
+        try {
+            this.mController.button.setEnabled(false);
+            this.onClickSendListener.onClickSend();
+            this.startRetryTimer();
+        } catch (Exception e) {
+            Errors.handle(activity, e);
             this.mController.button.setEnabled(true);
-            return res;
-        }).start();
+        }
     }
 
     private static void run(Runnable r) {
@@ -140,11 +136,14 @@ public class VerificationCodeBox extends LinearLayout {
         return et.getText().toString();
     }
 
-    public Runnable getSender() {
-        return sender;
+    public void reset() {
     }
 
-    public void setSender(Runnable sender) {
-        this.sender = sender;
+    public OnClickSendListener getOnClickSendListener() {
+        return onClickSendListener;
+    }
+
+    public void setOnClickSendListener(OnClickSendListener onClickSendListener) {
+        this.onClickSendListener = onClickSendListener;
     }
 }

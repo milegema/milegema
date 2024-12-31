@@ -78,7 +78,7 @@ public final class WebFilterChainBuilder {
         if (r1 == null || r2 == null) {
             return 0;
         }
-        return r1.getOrder() - r2.getOrder();
+        return r2.getOrder() - r1.getOrder();
     }
 
     public WebFilterChain create() {

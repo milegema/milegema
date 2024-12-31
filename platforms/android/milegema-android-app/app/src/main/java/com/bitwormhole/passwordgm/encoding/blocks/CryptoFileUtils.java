@@ -2,8 +2,8 @@ package com.bitwormhole.passwordgm.encoding.blocks;
 
 import com.bitwormhole.passwordgm.encoding.pem.PEMBlock;
 import com.bitwormhole.passwordgm.encoding.pem.PEMDocument;
-import com.bitwormhole.passwordgm.encoding.ptable.PropertyTable;
-import com.bitwormhole.passwordgm.encoding.ptable.PropertyTableLS;
+import com.bitwormhole.passwordgm.data.properties.PropertyTable;
+import com.bitwormhole.passwordgm.data.properties.PropertyTableLS;
 
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;

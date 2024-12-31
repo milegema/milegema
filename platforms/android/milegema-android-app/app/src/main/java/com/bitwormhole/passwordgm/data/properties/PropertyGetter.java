@@ -1,13 +1,15 @@
-package com.bitwormhole.passwordgm.utils;
+package com.bitwormhole.passwordgm.data.properties;
 
 import android.util.NoSuchPropertyException;
 
 import com.bitwormhole.passwordgm.data.ids.BlockID;
 import com.bitwormhole.passwordgm.data.repositories.refs.RefName;
 import com.bitwormhole.passwordgm.encoding.blocks.BlockType;
-import com.bitwormhole.passwordgm.encoding.ptable.PropertyTable;
 import com.bitwormhole.passwordgm.security.CipherMode;
 import com.bitwormhole.passwordgm.security.PaddingMode;
+import com.bitwormhole.passwordgm.utils.Base64;
+import com.bitwormhole.passwordgm.utils.Errors;
+import com.bitwormhole.passwordgm.utils.Hex;
 
 public class PropertyGetter {
 

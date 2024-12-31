@@ -7,11 +7,11 @@ import com.bitwormhole.passwordgm.data.repositories.Repository;
 import com.bitwormhole.passwordgm.data.repositories.objects.ObjectEntity;
 import com.bitwormhole.passwordgm.data.repositories.objects.ObjectHolder;
 import com.bitwormhole.passwordgm.encoding.blocks.BlockType;
-import com.bitwormhole.passwordgm.encoding.ptable.PropertyTable;
-import com.bitwormhole.passwordgm.encoding.ptable.PropertyTableLS;
+import com.bitwormhole.passwordgm.data.properties.PropertyTable;
+import com.bitwormhole.passwordgm.data.properties.PropertyTableLS;
 import com.bitwormhole.passwordgm.utils.ByteSlice;
-import com.bitwormhole.passwordgm.utils.PropertyGetter;
-import com.bitwormhole.passwordgm.utils.PropertySetter;
+import com.bitwormhole.passwordgm.data.properties.PropertyGetter;
+import com.bitwormhole.passwordgm.data.properties.PropertySetter;
 
 import java.io.IOException;
 

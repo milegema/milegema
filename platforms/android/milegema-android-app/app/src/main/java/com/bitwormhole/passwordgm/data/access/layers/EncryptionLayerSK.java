@@ -7,7 +7,7 @@ import com.bitwormhole.passwordgm.data.access.DataAccessRequest;
 import com.bitwormhole.passwordgm.data.access.DataAccessWriterChain;
 import com.bitwormhole.passwordgm.encoding.blocks.CryptoBlock;
 import com.bitwormhole.passwordgm.encoding.blocks.PlainBlock;
-import com.bitwormhole.passwordgm.encoding.ptable.PropertyTable;
+import com.bitwormhole.passwordgm.data.properties.PropertyTable;
 import com.bitwormhole.passwordgm.errors.PGMErrorCode;
 import com.bitwormhole.passwordgm.errors.PGMException;
 import com.bitwormhole.passwordgm.security.CipherMode;
@@ -16,8 +16,8 @@ import com.bitwormhole.passwordgm.security.Encryption;
 import com.bitwormhole.passwordgm.security.PaddingMode;
 import com.bitwormhole.passwordgm.security.SecurityRandom;
 import com.bitwormhole.passwordgm.utils.ByteSlice;
-import com.bitwormhole.passwordgm.utils.PropertyGetter;
-import com.bitwormhole.passwordgm.utils.PropertySetter;
+import com.bitwormhole.passwordgm.data.properties.PropertyGetter;
+import com.bitwormhole.passwordgm.data.properties.PropertySetter;
 
 import java.io.IOException;
 

@@ -1,9 +1,9 @@
 package com.bitwormhole.passwordgm.data.blocks;
 
 import com.bitwormhole.passwordgm.data.ids.RootBlockID;
-import com.bitwormhole.passwordgm.encoding.ptable.PropertyTable;
-import com.bitwormhole.passwordgm.utils.PropertyGetter;
-import com.bitwormhole.passwordgm.utils.PropertySetter;
+import com.bitwormhole.passwordgm.data.properties.PropertyTable;
+import com.bitwormhole.passwordgm.data.properties.PropertyGetter;
+import com.bitwormhole.passwordgm.data.properties.PropertySetter;
 
 import java.io.IOException;
 

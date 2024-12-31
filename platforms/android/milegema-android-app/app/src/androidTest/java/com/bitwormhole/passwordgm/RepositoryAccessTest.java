@@ -14,8 +14,8 @@ import com.bitwormhole.passwordgm.data.repositories.objects.ObjectHolder;
 import com.bitwormhole.passwordgm.data.repositories.refs.RefHolder;
 import com.bitwormhole.passwordgm.data.repositories.refs.RefName;
 import com.bitwormhole.passwordgm.encoding.blocks.BlockType;
-import com.bitwormhole.passwordgm.encoding.ptable.PropertyTable;
-import com.bitwormhole.passwordgm.encoding.ptable.PropertyTableLS;
+import com.bitwormhole.passwordgm.data.properties.PropertyTable;
+import com.bitwormhole.passwordgm.data.properties.PropertyTableLS;
 import com.bitwormhole.passwordgm.utils.ByteSlice;
 import com.bitwormhole.passwordgm.utils.Logs;
 
